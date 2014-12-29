@@ -303,7 +303,7 @@ public class MyApplication extends Application {
 
 我们来看下图片加载的Log信息
 
-![图片链接](/res/img/blog/2014/12/3.jpg)<center>
+<center>![图片链接](/res/img/blog/2014/12/3.jpg)</center>
 
 	第一条信息中，告诉我们开始加载图片，打印出图片的url以及图片的最大宽度和高度，图片的宽高默认是设备的宽高，当然如果我们很清楚图片的大小，我们也可以去设置这个大小，在ImageLoaderConfiguration的选项中memoryCacheExtraOptions(int maxImageWidthForMemoryCache, int maxImageHeightForMemoryCache)
 	
