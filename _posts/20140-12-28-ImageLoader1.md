@@ -127,7 +127,7 @@ ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 
 {% highlight java %}
 final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		ImageLoader.getInstance().loadImage(imageUrl, new ImageLoadingListener() {
 			
 			@Override
@@ -158,7 +158,7 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 {% highlight java %}
 final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		
 		ImageLoader.getInstance().loadImage(imageUrl, new SimpleImageLoadingListener(){
 
@@ -178,7 +178,7 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 {% highlight java %}
 final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		
 		ImageSize mImageSize = new ImageSize(100, 100);
 		
@@ -226,7 +226,7 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 {% highlight java %}
 final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		ImageSize mImageSize = new ImageSize(100, 100);
 		
 		//显示图片的配置
@@ -258,7 +258,7 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 {% highlight java %}
 final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		
 		//显示图片的配置
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
