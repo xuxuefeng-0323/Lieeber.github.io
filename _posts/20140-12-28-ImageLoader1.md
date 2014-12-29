@@ -30,22 +30,16 @@ tags : [ImageLoader, 开源框架, OOM,基本使用]
 	新建一个MyApplication继承Application，并在onCreate()中创建ImageLoader的配置参数，并初始化到ImageLoader中代码如下:
 
 {% highlight java %}
-package com.example.uil;
+import android.app.Application;
+
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-	
-import android.app.Application;
-	
+
 public class MyApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-
-		//创建默认的ImageLoader配置参数
-		ImageLoaderConfiguration configuration = ImageLoaderConfiguration
-				.createDefault(this);
-		
-		//Initialize ImageLoader with configuration.
+		ImageLoaderConfiguration configuration = ImageLoaderConfiguration.createDefault(this);
 		ImageLoader.getInstance().init(configuration);
 	}
 }
@@ -89,7 +83,6 @@ ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 {% highlight java %}
 <manifest>
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Include next permission if you want to allow UIL to cache images on SD card -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     ...
     <application android:name="MyApplication">
@@ -110,10 +103,9 @@ ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
     <ImageView
         android:layout_gravity="center"
         android:id="@+id/image"
-        android:src="@drawable/ic_empty"
+        android:src="@drawable/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
 </FrameLayout>
 {% endhighlight %}
 
@@ -126,29 +118,34 @@ ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 我们先使用ImageLoader的loadImage()方法来加载网络图片
 
 {% highlight java %}
-final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+public class MainActivity extends Activity {
+	private String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		final ImageView mImageView = (ImageView) findViewById(R.id.image);
 		ImageLoader.getInstance().loadImage(imageUrl, new ImageLoadingListener() {
-			
 			@Override
 			public void onLoadingStarted(String imageUri, View view) {
 			}
-			
+
 			@Override
-			public void onLoadingFailed(String imageUri, View view,
-					FailReason failReason) {
+			public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
 			}
-			
+
 			@Override
 			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
 				mImageView.setImageBitmap(loadedImage);
 			}
-			
+
 			@Override
 			public void onLoadingCancelled(String imageUri, View view) {
-				
+
 			}
 		});
+	}
+}
 {% endhighlight %}
 
 ---
@@ -157,11 +154,14 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 
 {% highlight java %}
-final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
-		
+public class MainActivity extends Activity {
+	private String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ImageView mImageView = (ImageView) findViewById(R.id.image);
 		ImageLoader.getInstance().loadImage(imageUrl, new SimpleImageLoadingListener(){
-
 			@Override
 			public void onLoadingComplete(String imageUri, View view,
 					Bitmap loadedImage) {
@@ -170,6 +170,8 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 			}
 			
 		});
+	}
+}
 {% endhighlight %}
 
 ---
@@ -177,21 +179,24 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 如果我们要指定图片的大小该怎么办呢，这也好办，初始化一个ImageSize对象，指定图片的宽和高，代码如下
 
 {% highlight java %}
-final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
-		
+public class MainActivity extends Activity {
+	private String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		final ImageView mImageView = (ImageView) findViewById(R.id.image);
 		ImageSize mImageSize = new ImageSize(100, 100);
-		
-		ImageLoader.getInstance().loadImage(imageUrl, mImageSize, new SimpleImageLoadingListener(){
-
+		ImageLoader.getInstance().loadImage(imageUrl, mImageSize, new SimpleImageLoadingListener() {
 			@Override
-			public void onLoadingComplete(String imageUri, View view,
-					Bitmap loadedImage) {
+			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
 				super.onLoadingComplete(imageUri, view, loadedImage);
 				mImageView.setImageBitmap(loadedImage);
 			}
-			
+
 		});
+	}
+}
 {% endhighlight %}
 
 ---
@@ -225,27 +230,28 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 我们将上面的代码稍微修改下
 
 {% highlight java %}
-final ImageView mImageView = (ImageView) findViewById(R.id.image);
-		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+public class MainActivity extends Activity {
+	private String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		final ImageView mImageView = (ImageView) findViewById(R.id.image);
 		ImageSize mImageSize = new ImageSize(100, 100);
-		
-		//显示图片的配置
-		DisplayImageOptions options = new DisplayImageOptions.Builder()
-				.cacheInMemory(true)
-				.cacheOnDisk(true)
-				.bitmapConfig(Bitmap.Config.RGB_565)
-				.build();
-		
-		ImageLoader.getInstance().loadImage(imageUrl, mImageSize, options, new SimpleImageLoadingListener(){
+
+		// 显示图片的配置
+		DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).bitmapConfig(Bitmap.Config.RGB_565).build();
+
+		ImageLoader.getInstance().loadImage(imageUrl, mImageSize, options, new SimpleImageLoadingListener() {
 
 			@Override
-			public void onLoadingComplete(String imageUri, View view,
-					Bitmap loadedImage) {
+			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
 				super.onLoadingComplete(imageUri, view, loadedImage);
 				mImageView.setImageBitmap(loadedImage);
 			}
-			
 		});
+	}
+}
 {% endhighlight %}
 
 ---
@@ -257,7 +263,13 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 接下来我们就来看看网络图片加载的另一个方法displayImage()，代码如下:
 
 {% highlight java %}
-final ImageView mImageView = (ImageView) findViewById(R.id.image);
+public class MainActivity extends Activity {
+	private String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		final ImageView mImageView = (ImageView) findViewById(R.id.image);
 		String imageUrl = "http://b.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7a194f04933adcbef76099b30.jpg";
 		
 		//显示图片的配置
@@ -268,8 +280,9 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 				.cacheOnDisk(true)
 				.bitmapConfig(Bitmap.Config.RGB_565)
 				.build();
-		
 		ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
+	}
+}
 {% endhighlight %}
 
 ---
@@ -283,7 +296,6 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 {% highlight java %}
 public class MyApplication extends Application {
-
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -292,7 +304,6 @@ public class MyApplication extends Application {
 		ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
 		.writeDebugLogs() //打印log信息
 		.build();
-		
 		
 		//Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(configuration);
@@ -319,7 +330,6 @@ public class MyApplication extends Application {
 
 {% highlight java %}
 imageLoader.displayImage(imageUrl, mImageView, options, new SimpleImageLoadingListener(), new ImageLoadingProgressListener() {
-			
 			@Override
 			public void onProgressUpdate(String imageUri, View view, int current,
 					int total) {
