@@ -1,0 +1,9 @@
+
+name: 安卓
+icon: fa fa-android
+members:
+  - name: Android SDK
+    link: http://developer.android.com/tools/sdk/tools-notes.html
+    
+  - name: Android Studio
+    link: http://developer.android.com/sdk/installing/studio.html#download

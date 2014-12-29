@@ -1,0 +1,11 @@
+
+name: Github
+icon: fa fa-github-alt
+members:
+  - name: Mayology555
+    notnewblank: false
+    link: http://github.com/Mayology555
+
+  - name: Mayology555Blog
+    notnewblank: true
+    link: http://Mayology555.github.io/

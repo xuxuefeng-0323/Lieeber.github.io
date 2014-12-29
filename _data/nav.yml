@@ -1,0 +1,21 @@
+- href: /page/timing.html
+  icon: fa fa-clock-o
+  title: 时 光 足 迹
+
+- href: /page/category.html
+  icon: fa fa-tags
+  title: 文 章 分 类
+
+#- href: /page/read.html
+#  icon:  fa fa-book
+#  title: 阅 读
+
+#newblank: true
+- href: /resource/index.html
+  icon: fa fa-eyedropper
+  title: 资 源 收 藏
+  newblank: fasle
+
+- href: /page/about.html
+  icon: fa fa-star
+  title: 关 于 作 者
