@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "Jekyll中的语法高亮:Pygments"
-category : Jekyll 
+category : 程序员技能
 duoshuo: true
 date : 2013-10-18
 tags : [Jekyll , Pygments , 语法高亮]

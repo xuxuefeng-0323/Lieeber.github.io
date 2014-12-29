@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "Jekyll目录结构与变量"
-category : Jekyll
+category : 程序员技能
 duoshuo: true
 date : 2013-11-24
 tags : Jekyll

@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "Git 常用命令整理"
-category : Git
+category : 程序员技能
 duoshuo: true
 date : 2013-10-30
 tags : [Git , 版本控制]

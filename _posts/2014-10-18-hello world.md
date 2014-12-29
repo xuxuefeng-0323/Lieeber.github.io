@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "hello world"
-category : Android基础
+category : Android基础巩固
 duoshuo: true
 date : 2013-10-18
 tags : [Jekyll , Demo , Test , Android  , Markdown]

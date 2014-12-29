@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "单例设计模式"
-category : JAVA基础
+category : JAVA能力扩展
 duoshuo: true
 date : 2014-01-20
 tags : [设计模式 , 单例设计模式 , Singleton , 饿汉式 , 懒汉式 , Double-checked locking , 双重检查锁定]

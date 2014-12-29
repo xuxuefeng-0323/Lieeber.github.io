@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "模板设计模式"
-category : JAVA基础
+category : JAVA能力扩展
 duoshuo: true
 date : 2014-2-20
 tags : [设计模式 , 模板模式 , 模板方法模式 , Template]

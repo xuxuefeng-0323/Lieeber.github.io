@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "Android的发展史"
-category : Android基础
+category : Android基础巩固
 duoshuo: true
 date : 2014-12-01
 tags : [Android基础 , Android版本 , 体系结构 , 环境搭建]

@@ -1,7 +1,7 @@
 ---
 layout : post
 title : "Windows平台配置Jekyll环境并与GitHub连接"
-category : Jekyll
+category : 程序员技能
 duoshuo: true
 date : 2013-10-25
 tags : [Jekyll , GitHub]
