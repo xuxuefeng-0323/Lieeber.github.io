@@ -35,7 +35,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import android.app.Application;
 	
 public class MyApplication extends Application {
-
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -51,7 +50,8 @@ public class MyApplication extends Application {
 {% endhighlight %}
 
 ---
-	ImageLoaderConfiguration是图片加载器ImageLoader的配置参数，使用了建造者模式，这里是直接使用了createDefault()方法创建一个默认的ImageLoaderConfiguration，当然我们还可以自己设置ImageLoaderConfiguration，设置如下
+
+ImageLoaderConfiguration是图片加载器ImageLoader的配置参数，使用了建造者模式，这里是直接使用了createDefault()方法创建一个默认的ImageLoaderConfiguration，当然我们还可以自己设置ImageLoaderConfiguration，设置如下
 
 {% highlight java %}
 File cacheDir = StorageUtils.getCacheDirectory(context);
@@ -80,7 +80,7 @@ ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 
 ---
 
-	上面的这些就是所有的选项配置，我们在项目中不需要每一个都自己设置，一般使用createDefault()创建的ImageLoaderConfiguration就能使用，然后调用ImageLoader的init（）方法将ImageLoaderConfiguration参数传递进去，ImageLoader使用单例模式。
+上面的这些就是所有的选项配置，我们在项目中不需要每一个都自己设置，一般使用createDefault()创建的ImageLoaderConfiguration就能使用，然后调用ImageLoader的init（）方法将ImageLoaderConfiguration参数传递进去，ImageLoader使用单例模式。
 
 **配置Android Manifest文件**
 
@@ -274,7 +274,7 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 从上面的代码中，我们可以看出，使用displayImage()比使用loadImage()方便很多，也不需要添加ImageLoadingListener接口，我们也不需要手动设置ImageView显示Bitmap对象，直接将ImageView作为参数传递到displayImage()中就行了，图片显示的配置选项中，我们添加了一个图片加载中ImageVIew上面显示的图片，以及图片加载出现错误显示的图片，效果如下，刚开始显示ic_stub图片，如果图片加载成功显示图片，加载产生错误显示ic_error
 
-![图片链接](/res/img/blog/2014/12/1.gif)
+<center>![图片链接](/res/img/blog/2014/12/1.gif)
 ![图片链接](/res/img/blog/2014/12/2.gif)
 
 这个方法使用起来比较方便，而且使用displayImage()方法 他会根据控件的大小和imageScaleType来自动裁剪图片，我们修改下MyApplication，开启Log打印
@@ -303,7 +303,7 @@ public class MyApplication extends Application {
 
 我们来看下图片加载的Log信息
 
-![图片链接](/res/img/blog/2014/12/3.jpg)
+<center>![图片链接](/res/img/blog/2014/12/3.jpg)
 
 	第一条信息中，告诉我们开始加载图片，打印出图片的url以及图片的最大宽度和高度，图片的宽高默认是设备的宽高，当然如果我们很清楚图片的大小，我们也可以去设置这个大小，在ImageLoaderConfiguration的选项中memoryCacheExtraOptions(int maxImageWidthForMemoryCache, int maxImageHeightForMemoryCache)
 	
@@ -385,12 +385,12 @@ gridView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScrol
 
 **OutOfMemoryError**
 
-	虽然这个框架有很好的缓存机制，有效的避免了OOM的产生，一般的情况下产生OOM的概率比较小，但是并不能保证OutOfMemoryError永远不发生，这个框架对于OutOfMemoryError做了简单的catch,保证我们的程序遇到OOM而不被crash掉，但是如果我们使用该框架经常发生OOM，我们应该怎么去改善呢？
+虽然这个框架有很好的缓存机制，有效的避免了OOM的产生，一般的情况下产生OOM的概率比较小，但是并不能保证OutOfMemoryError永远不发生，这个框架对于OutOfMemoryError做了简单的catch,保证我们的程序遇到OOM而不被crash掉，但是如果我们使用该框架经常发生OOM，我们应该怎么去改善呢？
 	
-		•减少线程池中线程的个数，在ImageLoaderConfiguration中的（.threadPoolSize）中配置，推荐配置1-5
-		•在DisplayImageOptions选项中配置bitmapConfig为Bitmap.Config.RGB_565，因为默认是ARGB_8888， 使用RGB_565会比使用ARGB_8888少消耗2倍的内存
-		•在ImageLoaderConfiguration中配置图片的内存缓存为memoryCache(new WeakMemoryCache()) 或者不使用内存缓存
-		•在DisplayImageOptions选项中设置.imageScaleType(ImageScaleType.IN_SAMPLE_INT)或者imageScaleType(ImageScaleType.EXACTLY)
+	•减少线程池中线程的个数，在ImageLoaderConfiguration中的（.threadPoolSize）中配置，推荐配置1-5
+	•在DisplayImageOptions选项中配置bitmapConfig为Bitmap.Config.RGB_565，因为默认是ARGB_8888， 使用RGB_565会比使用ARGB_8888少消耗2倍的内存
+	•在ImageLoaderConfiguration中配置图片的内存缓存为memoryCache(new WeakMemoryCache()) 或者不使用内存缓存
+	•在DisplayImageOptions选项中设置.imageScaleType(ImageScaleType.IN_SAMPLE_INT)或者imageScaleType(ImageScaleType.EXACTLY)
 	
-	通过上面这些，相信大家对Universal-Image-Loader框架的使用已经非常的了解了，我们在使用该框架的时候尽量的使用displayImage()方法去加载图片，loadImage()是将图片对象回调到ImageLoadingListener接口的onLoadingComplete()方法中，需要我们手动去设置到ImageView上面，displayImage()方法中，对ImageView对象使用的是Weak references，方便垃圾回收器回收ImageView对象，如果我们要加载固定大小的图片的时候，使用loadImage()方法需要传递一个ImageSize对象，而displayImage()方法会根据ImageView对象的测量值，或者android:layout_width and android:layout_height设定的值，或者android:maxWidth and/or android:maxHeight设定的值来裁剪图片
+通过上面这些，相信大家对Universal-Image-Loader框架的使用已经非常的了解了，我们在使用该框架的时候尽量的使用displayImage()方法去加载图片，loadImage()是将图片对象回调到ImageLoadingListener接口的onLoadingComplete()方法中，需要我们手动去设置到ImageView上面，displayImage()方法中，对ImageView对象使用的是Weak references，方便垃圾回收器回收ImageView对象，如果我们要加载固定大小的图片的时候，使用loadImage()方法需要传递一个ImageSize对象，而displayImage()方法会根据ImageView对象的测量值，或者android:layout_width and android:layout_height设定的值，或者android:maxWidth and/or android:maxHeight设定的值来裁剪图片
 
