@@ -274,7 +274,7 @@ final ImageView mImageView = (ImageView) findViewById(R.id.image);
 
 从上面的代码中，我们可以看出，使用displayImage()比使用loadImage()方便很多，也不需要添加ImageLoadingListener接口，我们也不需要手动设置ImageView显示Bitmap对象，直接将ImageView作为参数传递到displayImage()中就行了，图片显示的配置选项中，我们添加了一个图片加载中ImageVIew上面显示的图片，以及图片加载出现错误显示的图片，效果如下，刚开始显示ic_stub图片，如果图片加载成功显示图片，加载产生错误显示ic_error
 
-<center>![图片链接](/res/img/blog/2014/12/1.gif)
+![图片链接](/res/img/blog/2014/12/1.gif)
 ![图片链接](/res/img/blog/2014/12/2.gif)
 
 这个方法使用起来比较方便，而且使用displayImage()方法 他会根据控件的大小和imageScaleType来自动裁剪图片，我们修改下MyApplication，开启Log打印
@@ -303,7 +303,7 @@ public class MyApplication extends Application {
 
 我们来看下图片加载的Log信息
 
-<center>![图片链接](/res/img/blog/2014/12/3.jpg)
+![图片链接](/res/img/blog/2014/12/3.jpg)<center>
 
 	第一条信息中，告诉我们开始加载图片，打印出图片的url以及图片的最大宽度和高度，图片的宽高默认是设备的宽高，当然如果我们很清楚图片的大小，我们也可以去设置这个大小，在ImageLoaderConfiguration的选项中memoryCacheExtraOptions(int maxImageWidthForMemoryCache, int maxImageHeightForMemoryCache)
 	
