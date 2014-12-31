@@ -18,7 +18,7 @@ tags : [Android开源框架 , github]
 
 > 1.drawerLayout分为侧边菜单和主内容区两部分，侧边菜单可以根据手势展开与隐藏（drawerLayout自身特性），主内容区的内容可以随着菜单的点击而变化（自己实现）。
 
-<!-- more -->
+<!--more-->
 
 **创建抽屉布局**
 
@@ -137,5 +137,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 	2）、Drawer拉出、隐藏，带有android.R.id.home动画效果(syncState())
 	3）、监听Drawer拉出、隐藏事件
 
-> 3、覆写ActionBarDrawerToggle的onDrawerOpened()和onDrawerClosed()以监听抽屉拉出或隐藏事件
+> 3、覆写ActionBarDrawerToggle的onDrawerOpened()和onDrawerClosed()以监       听抽屉拉出或隐藏事件
 > 4、覆写Activity的onPostCreate()和onConfigurationChanged()方法
+
