@@ -129,10 +129,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
 > 1. mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener);
 > 2. ActionBarDrawerToggle是DrawerLayout.DrawerListener的具体实现类
-> 
-	1）、改变android.R.id.home图标(构造方法)
-	2）、Drawer拉出、隐藏，带有android.R.id.home动画效果(syncState())
-	3）、监听Drawer拉出、隐藏事件
 
+	1）、改变android.R.id.home图标(构造方法)
+
+	2）、Drawer拉出、隐藏，带有android.R.id.home动画效果(syncState())
+
+	3）、监听Drawer拉出、隐藏事件
 > 3. 覆写ActionBarDrawerToggle的onDrawerOpened()和onDrawerClosed()以监听抽屉拉出或隐藏事件
 > 4. 覆写Activity的onPostCreate()和onConfigurationChanged()方法
