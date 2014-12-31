@@ -31,7 +31,7 @@ tags : [Android基础 , Android版本 , 体系结构 , 环境搭建]
 
 > 1.抽屉视图的宽度以dp为单位，请不要超过320dp（为了总能看到一些主内容视图）
 
-{% hightlight java %}
+{% highlight java %}
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -65,7 +65,7 @@ tags : [Android基础 , Android版本 , 体系结构 , 环境搭建]
 
 > 1.通过listView来填充侧拉栏页面,点击每个条目时,通过Fragment来填充主页面的FrameLayout,并且侧拉栏要消失
 
-{% hightlight java %}
+{% highlight java %}
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
     private ListView list_menu;
     private DrawerLayout drawer_layout;
