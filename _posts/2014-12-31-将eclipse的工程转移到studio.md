@@ -1,10 +1,10 @@
 ---
 layout : post
-title : "Jekyll目录结构与变量"
+title : "在Android studio上检出eclipse目录结构代码"
 category : 程序员技能
 duoshuo: true
-date : 2013-11-24
-tags : Jekyll
+date : 2014-12-31
+tags : [eclipse, Android studio, svn]
 ---
 
 ##在Android studio上检出eclipse目录结构代码
