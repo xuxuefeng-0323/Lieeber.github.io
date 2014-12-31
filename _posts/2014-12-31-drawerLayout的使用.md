@@ -21,12 +21,10 @@ tags : [DrawerLayout, 开源框架,github]
 
 > 1. 主内容视图一定要是DrawerLayout的第一个子视图
 > 2. 主内容视图宽度和高度匹配父视图，即“match_parent”
-> 3. 必须显示指定抽屉视图（如ListView）的 android:layout_gravity 属性
->
-	1）、 android:layout_gravity=“start”时，从左向右滑出菜单
- 	2）、 android:layout_gravity=“end”  时，从右向左滑出菜单
-	3）、不推荐使用 “left”和“right”
-
+> 3. 必须显示指定抽屉视图（如ListView）的 android:layout_gravity 属性    
+	1）、 android:layout_gravity=“start”时，从左向右滑出菜单    
+ 	2）、 android:layout_gravity=“end”  时，从右向左滑出菜单    
+	3）、不推荐使用 “left”和“right”    
 > 4. 抽屉视图的宽度以dp为单位，请不要超过320dp（为了总能看到一些主内容视图）
 
 {% highlight java %}
@@ -128,12 +126,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 **监听抽屉的打开关闭事件**
 
 > 1. mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener);
-> 2. ActionBarDrawerToggle是DrawerLayout.DrawerListener的具体实现类
-
-	1）、改变android.R.id.home图标(构造方法)
-
-	2）、Drawer拉出、隐藏，带有android.R.id.home动画效果(syncState())
-
-	3）、监听Drawer拉出、隐藏事件
+> 2. ActionBarDrawerToggle是DrawerLayout.DrawerListener的具体实现类    
+	1）、改变android.R.id.home图标(构造方法)    
+	2）、Drawer拉出、隐藏，带有android.R.id.home动画效果(syncState())    
+	3）、监听Drawer拉出、隐藏事件    
 > 3. 覆写ActionBarDrawerToggle的onDrawerOpened()和onDrawerClosed()以监听抽屉拉出或隐藏事件
 > 4. 覆写Activity的onPostCreate()和onConfigurationChanged()方法
