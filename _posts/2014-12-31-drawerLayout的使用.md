@@ -64,6 +64,7 @@ tags : [Android开源框架 , github]
 
 ---
 
+
 **初始化导航列表**
 
 > 1.通过listView来填充侧拉栏页面,点击每个条目时,通过Fragment来填充主页面的FrameLayout,并且侧拉栏要消失
