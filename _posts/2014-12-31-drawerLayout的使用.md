@@ -6,7 +6,6 @@ duoshuo: true
 date : 2014-08-15
 tags : [DrawerLayout, 开源框架,github]
 ---
-##DrawerLayout的使用
 
 **基本介绍**
 

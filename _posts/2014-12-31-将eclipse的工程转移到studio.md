@@ -7,8 +7,6 @@ date : 2014-12-31
 tags : [eclipse, Android studio, svn]
 ---
 
-##在Android studio上检出eclipse目录结构代码
-
 在android studio中导入eclipse生成的项目是一件比较轻松的事情,直接import Module或者import project就可以做到,但是怎么才能检出服务器端eclipse生成的项目且能够使用android studio编译,并且能够commit到svn上不把原有服务器上的代码给打乱,就稍微要复杂一点了.这里面的应用场景就是公司一直用的eclipse,但是自己却想用android studio来工作该怎么办,下面是我的解决办法:
 
 <!-- more -->

@@ -6,7 +6,6 @@ duoshuo: true
 date : 2014-08-20
 tags : [ImageLoader, 开源框架, OOM,基本使用]
 ---
-##ImageLoader的基本使用
 
 **特征**
 
