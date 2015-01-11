@@ -46,3 +46,7 @@ public class MainActivity extends ActionBarActivity {
 
 ---
 
+最终项目出来的效果图为:
+
+![图片链接](/res/img/blog/2014/11/12/cc.png)
+
