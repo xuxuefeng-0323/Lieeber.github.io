@@ -2,10 +2,10 @@
 name: Github
 icon: fa fa-github-alt
 members:
-  - name: Mayology555
+  - name: Lieber
     notnewblank: false
-    link: http://github.com/Mayology555
+    link: http://github.com/Mayology
 
-  - name: Mayology555Blog
+  - name: Mayology
     notnewblank: true
-    link: http://Mayology555.github.io/
+    link: http://Mayology.github.io/
