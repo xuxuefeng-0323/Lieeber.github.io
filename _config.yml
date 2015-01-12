@@ -19,14 +19,14 @@ shTheme: shThemeDefault # shThemeDefault  shThemeDjango  shThemeEclipse  shTheme
 #SyntaxHihglighter config end
 
 blog:
-    name: Mayology555                                    # 博客名称
+    name: Mayology                                # 博客名称
     description: 时光足迹,心灵手记.                       # 博客描述
-    title: Mayology555                                   # 网页标题
-    url: http://Mayology555.github.io/                   # 博客地址
+    title: Mayology                                   # 网页标题
+    url: http://Mayology.github.io/                   # 博客地址
     duoshuo: Mayology555                                 # 多说ID 
     tongji: e0d9a75a7e53b54cd1e6649facd5906e             # 百度统计ID
 author:
-    name: Mayology555                                    # 作者名称
+    name: Mayology                                  # 作者名称
     email: libing501@foxmail.com                         # 邮箱地址
     weibo: http://weibo.com/108504315                    # 微博地址
     github: https://github.com/Mayology555               # GitHub地址
