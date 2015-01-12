@@ -31,11 +31,11 @@ blockquote p {
 > 移动电话: 13240089460<br />
 > QQ: 353890493<br />
 > Email: <a href="mailto:libing501@foxmail.com">libing501@foxmail.com</a>  
-> 新浪微博: <a href="http://weibo.com/108504315">冰封晓月</a>  
-> 技术博客: <a href="http://Mayology555.github.io/">Mayology555</a>  
-> GitHub：<a href="https://github.com/Mayology555">Mayology555</a>  
+> 新浪微博: <a href="http://weibo.com/108504315">Mark_Lieber</a>  
+> 技术博客: <a href="http://Mayology.github.io/">Lieber</a>  
+> GitHub：<a href="https://github.com/Mayology">Mayology</a>  
 > CSDN: <a href="http://my.csdn.net/u014789529">栤葑旳杺</a>   
-> 知乎: <a href="http://www.zhihu.com/people/tobin-29">恶魔奶爸</a>  
+> 知乎: <a href="http://www.zhihu.com/people/tobin-29">代码先森</a>  
 > ......
 
 ---
