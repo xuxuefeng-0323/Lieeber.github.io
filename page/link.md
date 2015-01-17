@@ -30,10 +30,12 @@ blockquote p {
 
 ---
 
-> [付强](naotou.github.io)
+> [付强](http://naotou.github.io)
 
 ---
 
-> [曾嵘](dkid.github.io)
+> [曾嵘](http://dkid.github.io)
+
+---
 
 {% if page.duoshuo != false %}{% include duoshuo.html %}{% endif %}
