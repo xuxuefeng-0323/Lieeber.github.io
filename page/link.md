@@ -25,9 +25,6 @@ blockquote p {
 
 # 我的好友
 
-<hr id="line"/>
-
-
 ---
 
 > [付强](http://naotou.github.io)
