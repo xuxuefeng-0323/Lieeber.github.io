@@ -1,0 +1,39 @@
+---
+layout: blog
+title: 我的好友
+duoshuo: true
+---
+
+<style>
+p {
+    color: #6D6D6D;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-top: -10px;
+}
+hr {
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+blockquote p {
+    line-height: 1.8;
+    letter-spacing: 0px;
+}
+</style>
+
+
+# 我的好友
+
+<hr id="line"/>
+
+
+---
+
+> [付强](naotou.github.io)
+
+---
+
+> [曾嵘](dkid.github.io)
+
+{% if page.duoshuo != false %}{% include duoshuo.html %}{% endif %}
